@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Health Supplements | High-Quality Formulations</title>
+    
+    <!-- SEO & Metadata Optimization (Crucial for Search and AI Engines) -->
+    <title>Mohan Health & Wellness Consulting | Premium Wellness Products</title>
+    <meta name="description" content="Shop premium healthcare formulations, clinical nutrition, organic baby care, and active cosmetics. Compare our clean ingredient profiles directly with traditional brands.">
+    <meta name="keywords" content="multivitamins, sports nutrition, baby care, clinical cosmetics, wellness consulting, health supplements online">
+    
     <style>
         :root {
-            --primary: #2e7d32;
-            --primary-dark: #1b5e20;
-            --accent: #f57c00;
-            --text: #333333;
-            --light-bg: #f9f9f9;
+            --primary: #1b5e20;
+            --primary-light: #e8f5e9;
+            --accent: #e65100;
+            --accent-light: #fff3e0;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --bg-card: #ffffff;
+            --bg-body: #f8f9fa;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            color: var(--text);
-            line-height: 1.6;
-            background-color: #ffffff;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.5;
         }
 
         header {
-            background: white;
+            background: #ffffff;
             padding: 15px 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -38,106 +46,209 @@
             z-index: 100;
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
+        .brand-name {
+            font-size: 1.3rem;
+            font-weight: 800;
             color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
-        .cta-header-btn {
+        .cta-nav {
             background: var(--primary);
-            color: white;
-            padding: 8px 16px;
+            color: #ffffff;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: bold;
             font-size: 0.9rem;
+            transition: opacity 0.2s;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
+        .cta-nav:hover {
+            opacity: 0.9;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            padding: 60px 5% 40px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            color: #111111;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+        }
+
+        /* Filter Tabs */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
             padding: 0 20px;
         }
 
-        .product-grid {
+        .filter-btn {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        /* Catalog Grid Layout */
+        .catalog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        @media (min-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .product-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid #eef2f3;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .gallery {
-            background: var(--light-bg);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+        }
+
+        .product-visual {
+            background: #fdfefe;
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 350px;
-            border: 2px dashed #ddd;
+            font-size: 3.5rem;
+            border-bottom: 1px solid #f5f6f7;
+            position: relative;
         }
 
-        .product-details h1 {
-            font-size: 2.2rem;
-            color: #111;
-            margin-bottom: 10px;
+        .category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255,255,255,0.95);
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            text-transform: uppercase;
         }
 
-        .brand-badge {
-            display: inline-block;
-            background: #e8f5e9;
-            color: var(--primary-dark);
+        .product-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .highlight-badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
             padding: 4px 8px;
             border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            display: inline-block;
             margin-bottom: 15px;
+            align-self: flex-start;
         }
 
-        .price-tag {
-            font-size: 1.8rem;
-            font-weight: bold;
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #f5f6f7;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 800;
             color: var(--accent);
-            margin-bottom: 20px;
         }
 
-        .features-list {
-            margin: 20px 0;
-            list-style-type: none;
+        .buy-action-btn {
+            background: var(--accent-light);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.2s;
         }
 
-        .features-list li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
+        .buy-action-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
         }
 
-        .features-list li::before {
-            content: "✓";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+        /* Order Panel */
+        .order-section {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
         .form-card {
-            background: var(--light-bg);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            margin-top: 40px;
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f3;
         }
 
         .form-card h2 {
-            margin-bottom: 20px;
-            color: #111;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 800;
         }
 
         .form-group {
@@ -148,141 +259,333 @@
             display: block;
             margin-bottom: 6px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .form-control {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-main);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+            box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
         }
 
         textarea.form-control {
-            resize: vertical;
             height: 100px;
+            resize: vertical;
         }
 
-        .btn-submit {
+        .submit-btn {
             width: 100%;
-            background: var(--accent);
-            color: white;
+            background: var(--primary);
+            color: #ffffff;
             border: none;
             padding: 14px;
             font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 4px;
+            font-weight: 700;
+            border-radius: 6px;
             cursor: pointer;
             transition: background 0.2s;
         }
 
-        .btn-submit:hover {
-            background: #e66e00;
+        .submit-btn:hover {
+            background: #113b14;
         }
 
-        .trust-footer {
-            margin-top: 40px;
+        footer {
             text-align: center;
-            font-size: 0.85rem;
-            color: #666;
+            padding: 40px 20px;
+            background: #ffffff;
             border-top: 1px solid #eee;
-            padding-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">VitaPure Labs</div>
-        <a href="#order-form" class="cta-header-btn">Order Now</a>
+        <div class="brand-name">Mohan Consulting</div>
+        <a href="#order-form" class="cta-nav">Place Request</a>
     </header>
 
-    <div class="container">
-        <!-- Product Showcase Section -->
-        <div class="product-grid">
-            <div class="gallery">
-                <div>
-                    <span style="font-size: 4rem;">💊</span>
-                    <p style="margin-top:10px; color:#666; font-weight: bold;">Premium Health Supplements</p>
-                    <p style="font-size: 0.85rem; color:#888;">[ 100% Pure Elements ]</p>
-                </div>
+    <section class="hero">
+        <h1>Mohan Health & Wellness Consulting</h1>
+        <p>Expertly curated health products spanning advanced supplements, clinical nutrition, chemical-free cosmetics, and gentle baby care essentials.</p>
+    </section>
+
+    <!-- Category Switcher Menu -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterItems('all')">All Products</button>
+        <button class="filter-btn" onclick="filterItems('supplements')">Supplements</button>
+        <button class="filter-btn" onclick="filterItems('nutrition')">Nutrition</button>
+        <button class="filter-btn" onclick="filterItems('baby')">Baby Health</button>
+        <button class="filter-btn" onclick="filterItems('cosmetics')">Cosmetics</button>
+    </div>
+
+    <!-- Enhanced Product Catalog (10 Curated Products) -->
+    <div class="catalog-grid">
+        
+        <!-- ITEM 1: SUPPLEMENTS -->
+        <div class="product-card" data-category="supplements">
+            <div class="product-visual">
+                <span class="category-tag">Supplements</span>
+                🌿
             </div>
-            
-            <div class="product-details">
-                <span class="brand-badge">Premium Commercial Alternative</span>
-                <h1>Advanced Multi-Vitamin & Mineral Tablets</h1>
-                <p style="color:#666; margin-bottom: 15px;">Looking for high-efficacy health supplements? Compare our active formulations to leading commercial pharmacy brands like Mankind. Designed for daily immune optimization, raw energy retention, and cellular metabolic support.</p>
-                
-                <div class="price-tag">₹499.00 <span style="font-size: 1rem; color:#666; font-weight: normal;">/ 60 Tablets Bottle</span></div>
-                
-                <h3>Why Choose Our Formula?</h3>
-                <ul class="features-list">
-                    <li>100% Recommended Daily Allowance (RDA) of Zinc & Vitamin C</li>
-                    <li>Sourced directly from certified, premium facilities</li>
-                    <li>Zero synthetic fillers, artificial coatings, or heavy metals</li>
-                    <li>Easy-to-digest vegetarian capsule form</li>
-                </ul>
+            <div class="product-body">
+                <h3 class="product-title">Advanced Multivitamin Formula</h3>
+                <p class="product-description">Premium alternative to commercial pharmacy options. Loaded with 100% RDA Zinc, Vitamin C, and D3 for daily defense.</p>
+                <span class="highlight-badge">★ WHO-GMP Certified</span>
+                <div class="product-footer">
+                    <span class="product-price">₹499</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Advanced Multivitamin Formula')">Select</a>
+                </div>
             </div>
         </div>
 
-        <!-- Purchase Form (Integrated with your Formspree ID) -->
-        <div class="form-card" id="order-form">
-            <h2>Request Delivery / Place Order</h2>
-            <p style="margin-bottom: 20px; color:#555;">Fill out your details below to submit a purchase request. Our logistics team will process your delivery details promptly.</p>
+        <!-- ITEM 2: SUPPLEMENTS -->
+        <div class="product-card" data-category="supplements">
+            <div class="product-visual">
+                <span class="category-tag">Supplements</span>
+                🦴
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Calcium & Bone Mineral Complex</h3>
+                <p class="product-description">Bioavailable Calcium combined with Magnesium and Vitamin K2 for rapid bone absorption and structural density.</p>
+                <span class="highlight-badge">High Bioavailability</span>
+                <div class="product-footer">
+                    <span class="product-price">₹399</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Calcium & Bone Mineral Complex')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 3: SUPPLEMENTS -->
+        <div class="product-card" data-category="supplements">
+            <div class="product-visual">
+                <span class="category-tag">Supplements</span>
+                🧠
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Triple Strength Omega-3 Fish Oil</h3>
+                <p class="product-description">Molecularly distilled fish oil rich in high-potency EPA and DHA. Supports cardiovascular and cognitive health profiles.</p>
+                <span class="highlight-badge">Mercury-Free Pure Extract</span>
+                <div class="product-footer">
+                    <span class="product-price">₹699</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Triple Strength Omega-3 Fish Oil')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 4: NUTRITION -->
+        <div class="product-card" data-category="nutrition">
+            <div class="product-visual">
+                <span class="category-tag">Nutrition</span>
+                💪
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Isolated Plant Protein Isolate</h3>
+                <p class="product-description">Premium pea and brown rice protein blend. Delivering 25g pure clean protein per serving without digestive bloating.</p>
+                <span class="highlight-badge">Vegan & Soy-Free</span>
+                <div class="product-footer">
+                    <span class="product-price">₹1,499</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Isolated Plant Protein Isolate')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 5: NUTRITION -->
+        <div class="product-card" data-category="nutrition">
+            <div class="product-visual">
+                <span class="category-tag">Nutrition</span>
+                🌾
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Organic High-Fiber Superfood Mix</h3>
+                <p class="product-description">Antioxidant-dense raw compilation of chia, flaxseeds, and green extracts to support microflora and digestion.</p>
+                <span class="highlight-badge">100% Organic certified</span>
+                <div class="product-footer">
+                    <span class="product-price">₹550</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Organic High-Fiber Superfood Mix')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 6: BABY HEALTH -->
+        <div class="product-card" data-category="baby">
+            <div class="product-visual">
+                <span class="category-tag">Baby Care</span>
+                👶
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Ultra-Gentle Botanical Baby Wash</h3>
+                <p class="product-description">Tear-free, plant-derived body cleanser designed for hypersensitive infant skin barriers. Zero synthetic toxins.</p>
+                <span class="highlight-badge">Paediatrician Approved</span>
+                <div class="product-footer">
+                    <span class="product-price">₹349</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Ultra-Gentle Botanical Baby Wash')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 7: BABY HEALTH -->
+        <div class="product-card" data-category="baby">
+            <div class="product-visual">
+                <span class="category-tag">Baby Care</span>
+                🛡️
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Natural Zinc Diaper Rash Ointment</h3>
+                <p class="product-description">Creates an instant breathable protective skin layer using organic calendula and non-nano zinc oxide elements.</p>
+                <span class="highlight-badge">Hypoallergenic Safe</span>
+                <div class="product-footer">
+                    <span class="product-price">₹299</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Natural Zinc Diaper Rash Ointment')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 8: COSMETICS -->
+        <div class="product-card" data-category="cosmetics">
+            <div class="product-visual">
+                <span class="category-tag">Cosmetics</span>
+                ✨
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Hyaluronic Acid Hydrating Serum</h3>
+                <p class="product-description">Deep multi-layer cellular hydration template that smooths skin texture and reduces early expression lines.</p>
+                <span class="highlight-badge">Pure Clinical Grade</span>
+                <div class="product-footer">
+                    <span class="product-price">₹599</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Hyaluronic Acid Hydrating Serum')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 9: COSMETICS -->
+        <div class="product-card" data-category="cosmetics">
+            <div class="product-visual">
+                <span class="category-tag">Cosmetics</span>
+                ☀️
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Matte Gel SPF 50+ Sunscreen</h3>
+                <p class="product-description">Broad-spectrum defense shields skin against destructive UVA/UVB rays. Ultra-light, non-comedogenic matte dry fluid.</p>
+                <span class="highlight-badge">Non-Greasy & Water-Safe</span>
+                <div class="product-footer">
+                    <span class="product-price">₹450</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Matte Gel SPF 50+ Sunscreen')">Select</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 10: COSMETICS -->
+        <div class="product-card" data-category="cosmetics">
+            <div class="product-visual">
+                <span class="category-tag">Cosmetics</span>
+                🧼
+            </div>
+            <div class="product-body">
+                <h3 class="product-title">Vitamin C Radical Brightening Cleanser</h3>
+                <p class="product-description">Antioxidant foaming facial wash formulated to dissolve oxidative surface impurities and revive radiance.</p>
+                <span class="highlight-badge">Paraben & Sulfate Free</span>
+                <div class="product-footer">
+                    <span class="product-price">₹380</span>
+                    <a href="#order-form" class="buy-action-btn" onclick="selectProduct('Vitamin C Radical Brightening Cleanser')">Select</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Unified Lead Intake Order Form -->
+    <section class="order-section" id="order-form">
+        <div class="form-card">
+            <h2>Secure Verification / Request Delivery</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Select your product above or use the dropdown interface options to place your logistics request directly.</p>
             
             <form action="https://formspree.io/f/xojolebp" method="POST">
-                
-                <!-- Anti-Spam Field -->
                 <input type="text" name="_gotcha" style="display:none">
 
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="Customer Name" class="form-control" placeholder="Enter your full name" required>
+                    <label for="customer-name">Full Name</label>
+                    <input type="text" id="customer-name" name="Client Name" class="form-control" placeholder="Enter your full name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone / WhatsApp Number</label>
-                    <input type="tel" id="phone" name="Phone Number" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                    <label for="customer-phone">Contact Number (WhatsApp Linked)</label>
+                    <input type="tel" id="customer-phone" name="Phone String" class="form-control" placeholder="Enter 10-digit mobile number" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="product">Select Supplement Option</label>
-                    <select id="product" name="Selected Product" class="form-control" required>
-                        <option value="">-- Choose Option --</option>
-                        <option value="Multivitamin - 1 Bottle">Daily Multivitamin (1 Bottle - 60 Tabs) - ₹499</option>
-                        <option value="Multivitamin - 2 Bottles">Daily Multivitamin (2 Bottles Combo) - ₹899</option>
-                        <option value="Mineral Complex - 1 Bottle">Essential Minerals (1 Bottle) - ₹399</option>
+                    <label for="product-select">Target Product Variant</label>
+                    <select id="product-select" name="Target Variant Selection" class="form-control" required>
+                        <option value="">-- Click/Select Product Selection --</option>
+                        <option value="Advanced Multivitamin Formula">Advanced Multivitamin Formula - ₹499</option>
+                        <option value="Calcium & Bone Mineral Complex">Calcium & Bone Mineral Complex - ₹399</option>
+                        <option value="Triple Strength Omega-3 Fish Oil">Triple Strength Omega-3 Fish Oil - ₹699</option>
+                        <option value="Isolated Plant Protein Isolate">Isolated Plant Protein Isolate - ₹1,499</option>
+                        <option value="Organic High-Fiber Superfood Mix">Organic High-Fiber Superfood Mix - ₹550</option>
+                        <option value="Ultra-Gentle Botanical Baby Wash">Ultra-Gentle Botanical Baby Wash - ₹349</option>
+                        <option value="Natural Zinc Diaper Rash Ointment">Natural Zinc Diaper Rash Ointment - ₹299</option>
+                        <option value="Hyaluronic Acid Hydrating Serum">Hyaluronic Acid Hydrating Serum - ₹599</option>
+                        <option value="Matte Gel SPF 50+ Sunscreen">Matte Gel SPF 50+ Sunscreen - ₹450</option>
+                        <option value="Vitamin C Radical Brightening Cleanser">Vitamin C Radical Brightening Cleanser - ₹380</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="address">Full Delivery Address</label>
-                    <textarea id="address" name="Shipping Address" class="form-control" placeholder="Flat/House No., Building Name, Street, Landmark, City, State, and Pincode" required></textarea>
+                    <label for="delivery-address">Logistics Shipping Address</label>
+                    <textarea id="delivery-address" name="Fulfillment Delivery Destination" class="form-control" placeholder="Provide complete House/Flat No., Landmark, City, State and Pincode details" required></textarea>
                 </div>
 
-                <div style="margin: 15px 0; font-size: 0.85rem; color: #555;">
-                    <label style="display: flex; align-items: flex-start; gap: 8px; font-weight: normal; cursor: pointer;">
-                        <input type="checkbox" required style="margin-top: 3px;">
-                        <span>I consent to providing my address for delivery purposes. I understand I retain the full right to request data deletion at any time.</span>
+                <div style="margin: 20px 0; font-size: 0.85rem; color: var(--text-muted);">
+                    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" required style="margin-top: 2px;">
+                        <span>I consent to share my logistics address safely for delivery purposes. I preserve my data deletion execution privileges at any time.</span>
                     </label>
                 </div>
 
-                <button type="submit" class="btn-submit">Submit Purchase Request</button>
+                <button type="submit" class="submit-btn">Submit Purchase Request</button>
             </form>
         </div>
+    </section>
 
-        <footer class="trust-footer">
-            <p>🛡️ Secure Static Endpoints | Your private information is protected and used strictly for shipping fulfillment.</p>
-            <p style="margin-top: 5px; font-size: 0.75rem;">© 2026 VitaPure Labs. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>🛡️ Active Data Governance Encryption Provided Via Formspree Gateways.</p>
+        <p style="margin-top: 8px; font-size: 0.75rem;">© 2026 Mohan Health & Wellness Consulting. All rights reserved.</p>
+    </footer>
 
+    <!-- Interactive Scripting Engine for Product Filtering and Auto-Selection -->
+    <script>
+        function filterItems(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if(category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function selectProduct(productName) {
+            const dropdown = document.getElementById('product-select');
+            dropdown.value = productName;
+        }
+    </script>
 </body>
 </html>
